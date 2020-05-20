@@ -7,11 +7,11 @@ LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
 LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.todo " td")}
 
 # format net usage output with fixed width
-NT="$(printf "%2d" "$(td count)")"
+COUNT="$(printf "%2d" "$(td count)")"
 
 # output net usage using pango markup
 ICON_SPAN="<span color=\"${LABEL_COLOR}\">$LABEL_ICON</span>"
-VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $NT</span>"
+VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $COUNT</span>"
 
 echo "${ICON_SPAN}${VALUE_SPAN}"
 
