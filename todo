@@ -16,5 +16,5 @@ VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $COUNT</
 echo "${ICON_SPAN}${VALUE_SPAN}"
 
 if [ -n "$button" ]; then
-    /usr/bin/i3-msg -q exec "/usr/bin/x-terminal-emulator -e td --interactive"
+    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=tdi -e 'td --interactive'"
 fi
