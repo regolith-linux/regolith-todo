@@ -1,15 +1,15 @@
 #!/bin/sh
 
 # get font and icon specifics from xresource file
-VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "JetBrains Mono Medium 13")}
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro 12")}
 VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
 LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
 LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.todo " ")}
 
-# format net usage output with fixed width
+# format todos' count output with fixed width
 COUNT="$(printf "%2d" "$(td count)")"
 
-# output net usage using pango markup
+# output todos' count using pango markup
 ICON_SPAN="<span color=\"${LABEL_COLOR}\">$LABEL_ICON</span>"
 VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $COUNT</span>"
 
