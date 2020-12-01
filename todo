@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # get font and icon specifics from xresource file
-VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro 12")}
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "JetBrains Mono Medium 13")}
 VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
 LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
 LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.todo " ")}
