@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -Eeu -o pipefail
 
 # get font and icon specifics from xresource file
 VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "JetBrains Mono Medium 13")}
@@ -6,15 +8,17 @@ VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
 LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
 LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.todo " ")}
 
-# format net usage output with fixed width
-COUNT="$(printf "%2d" "$(td count --uncompleted)")"
+# get number of uncompleted tasks from td-cli
+ntask=$(td count --uncompleted | sed 's/[^0-9]*//g')
+COUNT="$(printf ' %-2s' ${ntask: :-1})"
 
-# output net usage using pango markup
+# output number of uncompleted tasks using pango markup
 ICON_SPAN="<span color=\"${LABEL_COLOR}\">$LABEL_ICON</span>"
-VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $COUNT</span>"
+VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">$COUNT</span>"
 
 echo "${ICON_SPAN}${VALUE_SPAN}"
 
-if [ -n "$button" ]; then
-    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=floating_window -e 'td --interactive --uncompleted'"
+# make the blocklet clickable
+if [ -n "${button-}" ]; then
+    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=floating_window -e 'td --interactive  --uncompleted'"
 fi
