@@ -11,7 +11,7 @@ UNCOMPLETED=${filter:-$(xrescat i3xrocks.todo.uncompleted "false")}
 
 # get number of uncompleted tasks from td-cli
 FILTER=""
-[[ $UNCOMPLETED == "true" ]] && FILTER="--uncompleted"
+[[ $UNCOMPLETED = "true" ]] && FILTER="--uncompleted"
 ntask=$(td count $FILTER | sed 's/[^0-9]*//g')
 COUNT="$(printf ' %-2s' "${ntask: :-1}")"
 
@@ -23,5 +23,6 @@ echo "${ICON_SPAN}${VALUE_SPAN}"
 
 # make the blocklet clickable
 if [ -n "${button-}" ]; then
-    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=floating_window -e 'td --interactive  --uncompleted'"
+    CMD="'td --interactive $FILTER'"
+    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=floating_window -e $CMD"
 fi
