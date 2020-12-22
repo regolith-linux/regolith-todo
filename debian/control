@@ -11,6 +11,7 @@ Package: regolith-todo
 Architecture: any
 Depends: ${shlibs:Depends}, 
   ${misc:Depends},
-  td-cli
+  td-cli,
+  regolith-i3xrocks-config
 Description: A to-do blocklet for i3xrocks
  This package integrates the todo app td-cli into Regolith. 
