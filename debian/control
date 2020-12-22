@@ -1,0 +1,14 @@
+Source: regolith-todo
+Section: x11
+Priority: optional
+Maintainer: Regolith Linux <regolith.linux@gmail.com>
+Build-Depends: debhelper-compat (= 11)
+Standards-Version: 4.1.2
+Homepage: https://github.com/regolith-linux/regolith-desktop
+Vcs-Git: https://github.com/regolith-linux/regolith-desktop.git
+
+Package: regolith-todo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A to-do blocklet for i3xrocks
+ This package integrates the todo app td-cli into Regolith. 
