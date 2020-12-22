@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ "${2}" == "--uncompleted" ]; then
+    echo -ne "12\n"
+fi
