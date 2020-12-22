@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -Eeux -o pipefail
+
+XRESOURCE="${1}"
+DEFAULT_VALUE="${2}"
+
+echo "${DEFAULT_VALUE}"
+
+exit 0

@@ -1,0 +1,29 @@
+name: test
+on:
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - "*"
+  pull_request:
+    branches:
+      - "master"
+
+jobs:
+  test:
+    container: ubuntu:focal
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare test environment
+        shell: bash
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          apt update -qq
+          cp tests/xrescat_mock /usr/bin/xrescat
+          cp tests/i3-msg_mock /usr/bin/i3-msg
+      - name: Run todo test
+        shell: bash
+        run: |
+          tests/todo_test.sh
