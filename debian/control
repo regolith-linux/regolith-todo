@@ -9,6 +9,8 @@ Vcs-Git: https://github.com/regolith-linux/regolith-desktop.git
 
 Package: regolith-todo
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, 
+  ${misc:Depends},
+  td-cli
 Description: A to-do blocklet for i3xrocks
  This package integrates the todo app td-cli into Regolith. 
