@@ -13,5 +13,8 @@ Depends: ${shlibs:Depends},
   ${misc:Depends},
   td-cli,
   regolith-i3xrocks-config
+Provides: i3xrocks-todo
+Conflicts: i3xrocks-todo
+Replaces: i3xrocks-todo
 Description: A to-do blocklet for i3xrocks
  This package integrates the todo app td-cli into Regolith. 

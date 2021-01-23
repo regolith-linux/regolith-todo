@@ -1,3 +1,10 @@
+regolith-todo (1.2.1-1) bionic; urgency=medium
+
+  [ Ken Gilmer ]
+  * Specify that regolith-todo replaces i3xrocks-todo.  Addresses https://github.com/regolith-linux/regolith-todo/issues/6.
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Sat, 23 Jan 2021 12:08:37 -0800
+
 regolith-todo (1.2.0-1) bionic; urgency=medium
 
   [ Ken Gilmer ]
