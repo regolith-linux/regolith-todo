@@ -30,5 +30,5 @@ echo "${ICON_SPAN}${VALUE_SPAN}"
 
 # make the blocklet clickable
 if [ "x${BUTTON}" == "x1" ]; then
-    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=floating_window -e ${CLICK_COMMAND}"
+    /usr/bin/i3-msg -q exec "/usr/bin/gnome-terminal --class=floating_window -e '${CLICK_COMMAND}'"
 fi
