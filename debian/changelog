@@ -1,3 +1,10 @@
+regolith-todo (1.2.2-1ubuntu1) bionic; urgency=medium
+
+  [ Flavio Kreiliger ]
+  * Added quotes around ${CLICK_COMMAND} (#8)
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Mon, 26 Jul 2021 21:32:25 -0700
+
 regolith-todo (1.2.1-1) bionic; urgency=medium
 
   [ Ken Gilmer ]
