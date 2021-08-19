@@ -35,9 +35,9 @@ echo "${OUTPUT}" | grep -q -P '\>\s12\<'
 # Make sure button command is right
 PATH="$(pwd)/fixtures/todo/fifth:${PATH}"
 OUTPUT=$(filter=false button=1 ../scripts/todo)
-echo "${OUTPUT}" | grep -q -P "i3-msg called with -q exec /usr/bin/gnome-terminal --class=floating_window -e \'td --interactive\'"
+echo "${OUTPUT}" | grep -q -P "i3-msg called with -q exec /usr/bin/gnome-terminal --class=floating_window -- td --interactive"
 
 # Make sure button command is right with --uncomplete
 PATH="$(pwd)/fixtures/todo/fifth:${PATH}"
 OUTPUT=$(filter=true button=1 ../scripts/todo)
-echo "${OUTPUT}" | grep -q -P "i3-msg called with -q exec /usr/bin/gnome-terminal --class=floating_window -e \'td --interactive --uncompleted\'"
+echo "${OUTPUT}" | grep -q -P "i3-msg called with -q exec /usr/bin/gnome-terminal --class=floating_window -- td --interactive --uncompleted"
